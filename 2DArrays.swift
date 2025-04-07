@@ -18,8 +18,8 @@
 import Foundation
 
 // Declare constants for the maximum and minimum mark values
-let maxMark = 100
-let minMark = 0
+let MAX_MARK = 100
+let MIN_MARK = 0
 
 // File paths for student and assignment lists
 let studentsFilePath = "./students.txt"
@@ -67,7 +67,6 @@ fileHandle.closeFile()
 // Notify user of success
 print("The file has been written successfully.")
 
-
 // Function to generate a 2D array of random marks
 func generateMarks(forAssignments assignments: [String], andStudents students: [String]) -> [[String]] {
 
@@ -87,7 +86,7 @@ func generateMarks(forAssignments assignments: [String], andStudents students: [
             let rawMark = Int(75 + 10 * gaussian)
 
             // Clamp between minMark and maxMark, convert to string
-            marks[studentIndex][assignmentIndex] = String(max(minMark, min(maxMark, rawMark)))
+            marks[studentIndex][assignmentIndex] = String(max(MIN_MARK, min(MAX_MARK, rawMark)))
         }
     }
 
